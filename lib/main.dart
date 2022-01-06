@@ -48,13 +48,16 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: FlatButton(
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    primary: Colors.white,
+                  ),
                   onPressed: () {
                     setState(() {
                       storyBrain.nextStory(1);
                     });
                   },
-                  color: Colors.red,
                   child: Text(
                     storyBrain.getChoice1(),
                     style: TextStyle(
@@ -70,13 +73,16 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 2,
                 child: Visibility(
                   visible: storyBrain.buttonShouldBeVisible(),
-                  child: FlatButton(
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      primary: Colors.white,
+                    ),
                     onPressed: () {
                       setState(() {
                         storyBrain.nextStory(2);
                       });
                     },
-                    color: Colors.blue,
                     child: Text(
                       storyBrain.getChoice2(),
                       style: TextStyle(
